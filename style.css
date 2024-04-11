@@ -11,9 +11,19 @@ body, html {
 }
 
 
+
+.header-content {
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
 .cityname {
     color: white;
-    font-size: 75px;
+    font-size: 5em;
     /*position: relative;*/
     margin-bottom: -20px;
     text-align: center;
@@ -25,15 +35,6 @@ body, html {
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Precisely center .cityname */
     /* Additional styling */
-}
-
-.header-content {
-    text-align: center;
-}
-
-.header-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
 }
 
 .info-section, .book-section {
