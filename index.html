@@ -164,7 +164,26 @@
         <p>Ready to explore Brussels? Book your free tour today and get ready for an unforgettable adventure.</p>
         <!-- Booking form or link -->
         <div class="">            
-            <a href="mailto:freewalkingtourbrussels@gmail.com?Subject=FWT - Book - Brussels" class="cta2" >Book Now</a>
+            <!-- Noscript content for added SEO -->
+            <noscript><a href="https://www.eventbrite.com/e/test-tickets-897910282827" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
+            <!-- You can customize this button any way you like -->
+            <button id="eventbrite-widget-modal-trigger-897910282827" type="button">Buy Tickets</button>
+
+            <script src="https://www.eventbrite.es/static/widgets/eb_widgets.js"></script>
+
+            <script type="text/javascript">
+                var exampleCallback = function() {
+                    console.log('Order complete!');
+                };
+
+                window.EBWidgets.createWidget({
+                    widgetType: 'checkout',
+                    eventId: '897910282827',
+                    modal: true,
+                    modalTriggerElementId: 'eventbrite-widget-modal-trigger-897910282827',
+                    onOrderComplete: exampleCallback
+                });
+            </script>
         </div>
 
     </section>
@@ -178,25 +197,25 @@
                     <img src="images/ghent-walking-tour.webp" alt="Ghent Free Walking Tour" loading="lazy">
                     <h3>Ghent Free Walking Tour</h3>
                     <p>Discover the medieval charm of Ghent, a city known for its vibrant history, stunning architecture, and the famous Ghent Altarpiece.</p>
-                    <a href="ghent-tour-details.html" class="read-more-btn">Book Now</a>
+                    <a href="" class="read-more-btn">Ask your guide</a>
                 </div>
                 <div class="tour-item">
                     <img src="images/bruges-walking-tour.webp" alt="Bruges Free Walking Tour" loading="lazy">
                     <h3>Bruges Free Walking Tour</h3>
                     <p>Step into a fairytale with a visit to Bruges. Explore its picturesque canals, cobblestone streets, and chocolate shops on this enchanting day trip.</p>
-                    <a href="ghent-tour-details.html" class="read-more-btn">Book Now</a>
+                    <a href="" class="read-more-btn">Ask your guide</a>
                 </div>
                 <div class="tour-item">
                     <img src="images/chocolate-tour.webp" alt="Chocolate Tour" loading="lazy">
                     <h3>Chocolate Tour</h3>
                     <p>Indulge in Belgium’s world-famous chocolate on a tour that takes you to the best chocolatiers in Brussels, with tastings and secrets behind making the perfect Belgian chocolate.</p>
-                    <a href="ghent-tour-details.html" class="read-more-btn">Book Now</a>
+                    <a href="" class="read-more-btn">Ask your guide</a>
                 </div>
                 <div class="tour-item">
                     <img src="images/beer-tour.webp" alt="Beer Tour" loading="lazy">
                     <h3>Beer Tour</h3>
                     <p>Experience Belgium's renowned beer culture with visits to historic breweries and pubs. Sample a variety of Belgian beers and learn about the brewing process from experts.</p>
-                    <a href="ghent-tour-details.html" class="read-more-btn">Book Now</a>
+                    <a href="" class="read-more-btn">Ask your guide</a>
                 </div>
             </div>
         </div>
