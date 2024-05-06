@@ -32,15 +32,39 @@
             position: relative;   
         }
     </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">FWT Brussels</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#tours">Tours</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
     <header>
         <div class="header-content">
-            <h1>Únete a nuestros únicos tours a pie gratuitos</h1>
-            <a href="#book" class="cta">Reserva Ahora</a>
-        </div>
+       <!--<i class="fab fa-tripadvisor"></i>-->
+     </div>
         <div class="cityname"><b>BRUSELAS</b></div>
     </header>
+
+    <div class="header-content">
+        <h1>Tour a pie gratuito Bruselas</h1>
+        <a href="#book" class="cta">Reserva Ahora</a>
+    </div>
 
     <section id="how-it-works">
         <div class="container">
@@ -61,6 +85,7 @@
                 <div class="step">
                     <h3>Apoya a Tu Guía</h3>
                     <p>Nuestros tours son gratuitos. Si disfrutaste de la experiencia, puedes mostrar tu agradecimiento con una propina a tu guía.</p>
+                    <i class="fas fa-hand-holding-usd"></i>
                 </div>
             </div>
         </div>
@@ -109,6 +134,46 @@
         </div>
     </section>
 
+    <section id="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>¿Cómo encuentro el punto de encuentro de los tours?</h3>
+                    <p>El punto de encuentro se especifica en la confirmación de la reserva. Nuestros guías llevan paraguas o distintivos visibles para que puedas reconocerlos fácilmente.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué pasa si hay mal tiempo?</h3>
+                    <p>Los tours se realizan llueva o truene. Te recomendamos llevar ropa adecuada para la lluvia y calzado impermeable en caso de que el clima cambie. Solo en casos de condiciones extremas, consideraremos cancelar el tour por seguridad.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Hay una pausa durante el tour?</h3>
+                    <p>Sí, hay una pausa en el medio del tour en. Allí puedes usar el baño y tomar algo si lo deseas.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo funcionan los tours gratuitos?</h3>
+                    <p>Nuestros tours son gratuitos con la opción de dejar una propina al final si disfrutaste la experiencia. Esto permite que cada quien aporte según su satisfacción y presupuesto.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Necesito registrarme para un tour con anticipación?</h3>
+                    <p>Aunque no es obligatorio, recomendamos registrarte con anticipación para garantizar tu lugar, ya que los cupos son limitados y los tours son populares.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Son bienvenidas las mascotas en los tours?</h3>
+                    <p>Sí, las mascotas bien comportadas son bienvenidas en nuestros tours siempre que estén bajo control en todo momento.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Es una actividad accesible en silla de ruedas?</h3>
+                    <p>Trabajamos por hacer nuestros tours lo más accesibles posible, pero algunas rutas pueden tener limitaciones debido a la naturaleza histórica de los caminos. Por favor, contáctanos con anticipación para discutir opciones accesibles.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Quiénes son los guías de los tours?</h3>
+                    <p>Nuestros guías son locales apasionados y bien informados sobre la historia y cultura de Bruselas. Todos están capacitados para ofrecer una experiencia informativa y entretenida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+      
     <section id="book" class="book-section">
         <h2>Reserva Un Tour</h2>
         <p>¿Listo para explorar Bruselas? Reserva tu tour gratuito hoy y prepárate para una aventura inolvidable.</p>
@@ -186,5 +251,45 @@
             <a href="#">Facebook</a>
         </div>
     </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var faqs = document.querySelectorAll('.faq-item h3');
+    
+        faqs.forEach(function(faq) {
+            faq.addEventListener('click', function() {
+                // This toggles the display of the answer paragraph.
+                var answer = this.nextElementSibling;
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                } else {
+                    answer.style.display = "block";
+                }
+            });
+        });
+    });
+</script>
+
+
+<script>
+    const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+navLinks.style.transform = navLinks.style.transform === 'translateX(0%)' ? 'translateX(100%)' : 'translateX(0%)';
+// Animating links
+Array.from(navLinks.children).forEach((link, index) => {
+    if (link.style.animation) {
+        link.style.animation = '';
+    } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+    }
+});
+});
+
+// Optional: Add animation keyframes for nav links
+
+</script>
+
 </body>
 </html>

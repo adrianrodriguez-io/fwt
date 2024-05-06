@@ -24,6 +24,88 @@
 
 <link rel="stylesheet" href="style.css">
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #555;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 500;
+        color: white;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
     header {
     background-image: url('images/brussels-walking-tour.webp');
     background-size: cover;
@@ -32,186 +114,141 @@
     padding: 100px 0;
     position: relative;   
 }
+
+#free-tour-brussels {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+#free-tour-brussels h1 {
+    color: orange;
+}
+
+.countdown {
+    font-size: 24px;
+    margin: 20px;
+}
+
+.countdown span {
+    display: inline-block;
+    width: 50px;
+    padding: 10px;
+    background-color: orange;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.countdown span:not(:last-child):after {
+    content: "";
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly */
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Wrap items to next line on small screens */
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center; /* Align text and icon vertically */
+    flex-direction: column; /* Stack icon and text vertically */
+    flex-basis: 20%; /* Give each item a base width */
+    text-align: center;
+    padding: 10px;
+}
+
+.feature-item i {
+    font-size: 40px; /* Larger icons */
+    margin-bottom: 10px; /* Space between icon and text */
+    color: orange; /* Icon color */
+}
+
+@media (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        flex-basis: 100%; /* Full width on small screens */
+    }
+}
+
+
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">FWT Brussels</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#tours">Tours</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
     <header>
         <div class="header-content">
-            <h1>Join our unique free walking tours</h1>
-            <!--<p>Discover Brussels Like Never Before</p>-->
-            <a href="#book" class="cta">Book Now</a>
+<!--<i class="fab fa-tripadvisor"></i>-->
         </div>
         <div class="cityname"><b>BRUSSELS</b></div>
     </header>
 
-    
-    
-    <section id="how-it-works">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="steps-container">
-                <!--
-                <div class="step">
-                    <h3>Browse Tours</h3>
-                    <p>Explore our selection of free walking tours in Brussels, each offering a unique perspective of the city.</p>
-                </div>
-                -->
-                <div class="step">
-                    <h3>Book Your Spot</h3>
-                    <p>Choose the tour and date that suits you best and book your spot through our simple online booking system.</p>
-                </div>
-                <div class="step">
-                    <h3>Meet Up</h3>
-                    <p>Meet your guide at the designated starting point, ready to explore Brussels like never before.</p>
-                </div>
-                <div class="step">
-                    <h3>Enjoy the Tour</h3>
-                    <p>Discover the history, culture, and beauty of Brussels with our experienced local guides.</p>
-                </div>
-                <div class="step">
-                    <h3>Support Your Guide</h3>
-                    <p>Our tours are free to join. If you enjoyed your experience, you can show your appreciation with a tip to your guide.</p>
-                </div>
+    <section id="free-tour-brussels">
+        <h1>Free Walking Tours Brussels</h1>
+        <div class="features-container">
+            <div class="feature-item">
+                <!--<i class="fas fa-theater-masks"></i>-->
+                <p>The best free tour of Brussels! Free Walking Tours Brussels promotes a tourism that fuses entertainment, culture, and respect for the city 🙂 Join and discover Brussels with us!</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-camera"></i>
+                <p>Entertainment and culture, is the combination that defines our success formula.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-user-tie"></i>
+                <p>Expert guides that are passionate about the city!</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-hand-holding-usd"></i>
+                <p>Free Tour concept, where you choose the price.</p>
+            </div>
+        </div>
+        
+        <div id="next-tour-countdown">
+            <h2>NEXT FREE TOUR</h2>
+            <div class="countdown">
+                <span id="hours">00</span> Hours
+                <span id="minutes">00</span> Minutes
+                <span id="seconds">00</span> Seconds
             </div>
         </div>
     </section>
-
-    
-    <section id="explore-brussels" class="seo-section">
-        <div class="container">
-            <h2>Explore the Heart of Brussels</h2>
-            <div class="tour-images">
-                <img src="images/brussels-walking-tour.webp" alt="Grand Place free walking tour" class="tour-photo" loading="lazy">
-                <!--<img src="images/Manneken-Pis.jpg" alt="Manneken Pis fre walking tour" class="tour-photo">-->
-            </div>
-            <p>Discover the hidden gems and iconic landmarks of Brussels through our captivating free walking tours. Whether you're drawn to the historical allure of the Grand Place, the artistic charm of the Mont des Arts, or the culinary delights of the Belgian cuisine, our tours offer something for every type of explorer. Join us to uncover the rich tapestry of Brussels' history, culture, and architecture.</p>
-            <p>Our expert guides bring the stories of Brussels to life, from the legendary Manneken Pis to the stuning history of the Grand Place. Experience the vibrant atmosphere of the city's markets, the beauty of its art nouveau architecture, and the compelling history of the European Union's de facto capital. With "freewalkingtourbrussels.com" your adventure through Brussels begins with just a click.</p>
-           <a href="#book" class="cta">Start Your Adventure</a>
-        </div>
-    </section>
-    
-    <section id="tour-itinerary">
-        <h2>Discover Brussels - Tour Itinerary</h2>
-        <div class="itinerary-container">
-            <!-- Each point of interest -->
-            <!--
-            <div class="itinerary-item">
-                <h3>1. Grand Place (Start)</h3>
-                <p>Begin the tour at Brussels' central square, known for its ornate buildings, including the Town Hall and the King's House or Maison du Roi. The Grand Place is a UNESCO World Heritage site and offers a breathtaking start to the tour.</p>
-                <span>Duration: 10 minutes</span>
-            </div>
-    
-            <div class="itinerary-item">
-                <h3>2. Manneken Pis</h3>
-                <p>A short walk from the Grand Place, visit the famous Manneken Pis, a small bronze sculpture depicting a little boy urinating into a fountain. Despite its size, this statue is a symbol of Brussels' irreverent humor.</p>
-                <span>Duration: 10 minutes</span>
-            </div>
-    
-            <div class="itinerary-item">
-                <h3>3. Galeries Royales Saint-Hubert</h3>
-                <p>Head to one of Europe's oldest shopping arcades, known for its elegant glass roof. The galleries house luxury shops, cafes, and a theater. It's a perfect example of the city's 19th-century elegance.</p>
-                <span>Duration: 15 minutes</span>
-            </div>
-    
-            <div class="itinerary-item">
-                <h3>4. Cathedral of St. Michael and St. Gudula</h3>
-                <p>A short walk leads to this Gothic cathedral, which took about 300 years to complete. The cathedral is dedicated to the patron saints of Brussels and is a site of national importance.</p>
-                <span>Duration: 15 minutes</span>
-            </div>
-            <div class="itinerary-item">
-                <h3>5. Mont des Arts</h3>
-                <p>Continue to the Mont des Arts, offering one of the best views of the city. This cultural quarter is home to the Royal Library, the National Archives, and several museums, including the Magritte Museum.</p>
-                <span>Duration: 15 minutes</span>
-            </div>
-            <div class="itinerary-item">
-                <h3>6. Place Royale (Koningsplein)</h3>
-                <p>Just a stone's throw from Mont des Arts, the Place Royale is a historic square surrounded by neoclassical architecture, including the Church of Saint Jacques-sur-Coudenberg and the Royal Palace (view from the outside).</p>
-                <span>Duration: 10 minutes</span>
-            </div>
-            <div class="itinerary-item">
-                <h3>7. Royal Palace of Brussels</h3>
-                <p>Though not always open to the public, the facade of the Royal Palace is impressive and serves as the official palace of the King and Queen of Belgium, symbolizing Belgium's constitutional monarchy.</p>
-                <span>Duration: 10 minutes (view from the outside)</span>
-            </div>
-            <div class="itinerary-item">
-                <h3>8. Parc de Bruxelles (Warandepark)</h3>
-                <p>Walk through the largest urban public park in Brussels. The park is directly opposite the Royal Palace and offers a peaceful retreat with its paths, statues, and manicured lawns.</p>
-                <span>Duration: 15 minutes</span>
-            </div>
-            <div class="itinerary-item">
-                <h3>9. Magritte Museum</h3>
-                <p>For art lovers, a visit to the Magritte Museum showcases the largest collection of works by the Belgian surrealist artist René Magritte. Located in the Mont des Arts cultural complex. </p>
-                <span>Duration: Optional (if time allows and interest)</span>
-            </div>
-            <div class="itinerary-item">
-                <h3>10. Return to Grand Place</h3>
-                <p>Conclude the tour by strolling back to the Grand Place, where participants can enjoy Belgian specialties like waffles and chocolate, or simply bask in the beauty of the square as the evening lights begin to glow.</p>
-                <span>Duration: Return walk, 10 minutes</span>
-            </div>
-            -->
-            <!-- Repeat for each point of interest -->
-            <div class="itinerary-item">
-                <h3>1. Grand Place (Start)</h3>
-            </div>
-            <div class="itinerary-item">
-                <h3>2. Manneken Pis</h3>
-            </div>
-            <div class="itinerary-item">
-                <h3>3. Brussels Stock Exchange (Bourse)</h3>
-            </div>
-            <div class="itinerary-item">
-                <h3>4. Toone Puppet Theatre</h3>
-            </div>
-            <div class="itinerary-item">
-                <h3>5. Staminets</h3>
-            </div>
-            <div class="itinerary-item">
-                <h3>6. Royal Saint-Hubert Galleries</h3>
-            </div>
-            <div class="itinerary-item">
-                <h3>7. Cathedral of St. Michael and St. Gudula</h3>
-            </div>
-            <div class="itinerary-item">
-                <h3>8. Mont des Arts (End)</h3>
-            </div>
-    
-        </div>
-    </section>
-    
-    <section id="book" class="book-section">
-        <h2>Book A Tour</h2>
-        <p>Ready to explore Brussels? Book your free tour today and get ready for an unforgettable adventure.</p>
-        <!-- Booking form or link -->
-        <div class="">            
-            <!-- Noscript content for added SEO -->
-            <noscript><a href="https://www.eventbrite.com/e/test-tickets-897910282827" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
-            <!-- You can customize this button any way you like -->
-            <button id="eventbrite-widget-modal-trigger-897910282827" type="button" class="cta">Book your spot now!</button>
-
-            <script src="https://www.eventbrite.es/static/widgets/eb_widgets.js"></script>
-
-            <script type="text/javascript">
-                var exampleCallback = function() {
-                    console.log('Order complete!');
-                };
-
-                window.EBWidgets.createWidget({
-                    widgetType: 'checkout',
-                    eventId: '897910282827',
-                    modal: true,
-                    modalTriggerElementId: 'eventbrite-widget-modal-trigger-897910282827',
-                    onOrderComplete: exampleCallback
-                });
-            </script>
-        </div>
-
-    </section>
-
 
     <section id="other-tours">
         <div class="container">
             <h2>Explore More Tours</h2>
             <div class="tour-items">
+                <div class="tour-item">
+                    <img src="images/brussels-walking-tour-md.webp" alt="Brussels Free Walking Tour" loading="lazy">
+                    <h3>Brussels Free Walking Tour</h3>
+                    <p>Explore the heart of Europe in our Brussels Free Walking Tour, a city celebrated for its illustrious history, exquisite architecture, and the iconic Grand Place. Discover Brussels' rich tapestry of culture and its pivotal role in European politics.</p>
+                    <a href="free-walking-tour-brussels.html" class="read-more-btn">Book + Info</a>
+                </div>
                 <div class="tour-item">
                     <img src="images/chocolate-tour.webp" alt="Chocolate Tour" loading="lazy">
                     <h3>Chocolate Tour</h3>
@@ -239,22 +276,67 @@
             </div>
         </div>
     </section>
-    
-    
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
-        </nav>
-        <div class="contact">
-            <a href="#">Contact Us: freewalkingtourbrussels@gmail.com</a>            
-        </div>
-        <div class="social-media">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-        </div>
-    </footer>
+
+
+    <script>
+
+function getNextTourDate() {
+    var now = new Date();
+    var tourTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 11, 0, 0); // Today at 11:00 AM
+
+    // If the current time is past today's 11:00 AM, set tourTime to tomorrow's 11:00 AM
+    if (now.getTime() > tourTime.getTime()) {
+        tourTime.setDate(tourTime.getDate() + 1);
+    }
+
+    return tourTime.getTime();
+}
+
+
+        function countdown() {
+            const countDownDate = getNextTourDate();
+
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("hours").textContent = hours < 10 ? '0' + hours : hours;
+        document.getElementById("minutes").textContent = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById("seconds").textContent = seconds < 10 ? '0' + seconds : seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("next-tour-countdown").innerHTML = "The tour has started!";
+        }
+    }, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', countdown);
+
+    </script>
+
+    <script>
+        const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+    navLinks.style.transform = navLinks.style.transform === 'translateX(0%)' ? 'translateX(100%)' : 'translateX(0%)';
+    // Animating links
+    Array.from(navLinks.children).forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = '';
+        } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        }
+    });
+});
+
+// Optional: Add animation keyframes for nav links
+
+    </script>
 </body>
 </html>
